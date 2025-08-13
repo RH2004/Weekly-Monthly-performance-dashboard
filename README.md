@@ -1,168 +1,155 @@
-# Weekly-Monthly-performance-dashboard
+Here's your README file in markdown format, with credits added at the end and a placeholder for the link:
 
-📊 Employee Performance Dashboard
-Overview
-The Employee Performance Dashboard is an interactive Streamlit web application designed to track, analyze, and visualize weekly and monthly performance metrics across different employee roles in a company.
+````
+# Weekly-Monthly Performance Dashboard
+
+## 📊 Employee Performance Dashboard Overview
+
+The **Employee Performance Dashboard** is an interactive Streamlit web application designed to track, analyze, and visualize weekly and monthly performance metrics across different employee roles in a company.
 
 It transforms uploaded CSV performance reports into insightful KPIs, charts, problem-suggestion analyses, and individual performance views, helping managers and team leads make data-driven decisions.
 
-✨ Key Features
-1. Data Upload & Processing
-Weekly Analysis: Upload a single weekly CSV report.
+## ✨ Key Features
 
-Monthly Analysis: Upload 4 weekly CSV files for a full month’s aggregated analysis.
+- **Data Upload & Processing**
+  - **Weekly Analysis**: Upload a single weekly CSV report.
+  - **Monthly Analysis**: Upload 4 weekly CSV files for a full month’s aggregated analysis.
 
-Automatic Column Mapping: Flexible column name detection for different CSV formats.
+- **Automatic Column Mapping**: Flexible column name detection for different CSV formats.
 
-Data Cleaning:
+- **Data Cleaning**:
+  - Standardizes column names.
+  - Fills missing numeric values with 0.
+  - Parses dates into datetime objects.
 
-Standardizes column names.
+- **Performance KPIs**
+  - Role-based and company-wide total and average metrics:
+    - 🎥 **Video Editors** – Videos Created
+    - 🎨 **Designers** – Designs Created
+    - 📝 **Account Managers** – Scripts Produced, Posts Published, Client Meetings
+    - 🎬 **Filmmakers** – Projects Worked
+  - **Productivity Scores** aggregated across all roles.
 
-Fills missing numeric values with 0.
+- **Interactive Visualizations**
+  - **Performance Charts**: Compare individual performance against company averages.
+  - **Trend Analysis**: Weekly performance trends for monthly data.
+  - **Custom Styling**: Gradient headers, clean KPI cards, and well-structured tables.
 
-Parses dates into datetime objects.
+- **Problem & Suggestion Analysis**
+  - Automatically extracts reported problems and suggestions for improvement.
+  - **Top 10 common issues** table.
+  - **Word Clouds** for quick thematic insights into challenges and ideas.
 
-2. Performance KPIs
-Role-based and company-wide total and average metrics:
+- **Individual Employee View**
+  - Detailed profile with:
+    - Role and position.
+    - Role-specific metrics.
+    - Comparison against company averages.
+    - Full weekly/monthly activity table.
+    - Individual problems and suggestions.
 
-🎥 Video Editors – Videos Created
+## 🖥️ How to Use
 
-🎨 Designers – Designs Created
+### Install Dependencies
 
-📝 Account Managers – Scripts Produced, Posts Published, Client Meetings
-
-🎬 Filmmakers – Projects Worked
-
-Productivity Scores aggregated across all roles.
-
-3. Interactive Visualizations
-Performance Charts: Compare individual performance against company averages.
-
-Trend Analysis: Weekly performance trends for monthly data.
-
-Custom Styling: Gradient headers, clean KPI cards, and well-structured tables.
-
-4. Problem & Suggestion Analysis
-Automatically extracts reported problems and suggestions for improvement.
-
-Top 10 common issues table.
-
-Word Clouds for quick thematic insights into challenges and ideas.
-
-5. Individual Employee View
-Detailed profile with:
-
-Role and position.
-
-Role-specific metrics.
-
-Comparison against company averages.
-
-Full weekly/monthly activity table.
-
-Individual problems and suggestions.
-
-🖥️ How to Use
-1. Install Dependencies
-bash
-Copy code
+```
 pip install streamlit pandas plotly numpy matplotlib wordcloud
-2. Run the App
-bash
-Copy code
-streamlit run app.py
-(Replace app.py with your file name if different)
+````
 
-3. Upload Data
-Weekly View: Upload one weekly CSV in the sidebar.
+### Run the App
 
-Monthly View: Upload exactly 4 weekly CSV files (Week 1–Week 4).
+```
+streamlit run performance_dashboard.py
+```
 
-CSV format must include at least:
 
-Name, Role, Week Start Date, Week End Date
+### Upload Data
 
-Role-specific metric columns (e.g., Videos Created, Designs Created, etc.)
+* **Weekly View**: Upload one weekly CSV in the sidebar.
+* **Monthly View**: Upload exactly 4 weekly CSV files (Week 1–Week 4).
+
+**CSV format must include at least:**
+
+* Name, Role, Week Start Date, Week End Date
+* Role-specific metric columns (e.g., Videos Created, Designs Created, etc.)
 
 The app automatically detects variations in column names (e.g., Name vs Employee Name).
 
-4. Navigate Views
+### Navigate Views
+
 The dashboard has three tabs:
 
-Tab	Purpose
-📅 Weekly View	View company-wide KPIs, role summaries, and problems/suggestions for the week.
-📊 Monthly View	See 4-week aggregated KPIs, trends, and issues.
-👤 Individual View	Select an employee to view their personal performance breakdown.
+* **📅 Weekly View**: View company-wide KPIs, role summaries, and problems/suggestions for the week.
+* **📊 Monthly View**: See 4-week aggregated KPIs, trends, and issues.
+* **👤 Individual View**: Select an employee to view their personal performance breakdown.
 
-📂 File Structure Example
-graphql
-Copy code
-app.py               # Main Streamlit app
-requirements.txt     # Dependencies list
-weekly_report.csv    # Sample weekly CSV data
-⚙️ Under the Hood – Main Components
-PerformanceDashboard Class
-Handles:
 
-Column mapping & data cleaning.
+## ⚙️ Under the Hood – Main Components
 
-Metric calculations per role.
+* **PerformanceDashboard Class** Handles:
 
-KPI card rendering.
+  * Column mapping & data cleaning.
+  * Metric calculations per role.
+  * KPI card rendering.
+  * Word cloud creation.
+  * Performance chart generation.
+  * Problems & suggestions analysis.
+  * Individual employee view rendering.
 
-Word cloud creation.
+## Technologies Used
 
-Performance chart generation.
+* **Streamlit**: Interactive UI framework.
+* **Pandas**: Data cleaning and transformation.
+* **Plotly**: Dynamic charts and visualizations.
+* **Matplotlib**: Word cloud rendering.
+* **WordCloud**: Problem/suggestion visual insights.
+* **NumPy, Regex, Datetime**: Supporting data manipulation and cleaning.
 
-Problems & suggestions analysis.
+## 📸 Example Visuals
 
-Individual employee view rendering.
+**KPI Cards**:
 
-Technologies Used
-Streamlit: Interactive UI framework.
-
-Pandas: Data cleaning and transformation.
-
-Plotly: Dynamic charts and visualizations.
-
-Matplotlib: Word cloud rendering.
-
-WordCloud: Problem/suggestion visual insights.
-
-NumPy, Regex, Datetime: Supporting data manipulation and cleaning.
-
-📸 Example Visuals
-KPI Cards:
-
-yaml
-Copy code
-Total Videos: 120  |  Avg: 6.0
-Total Designs: 80  |  Avg: 4.0
+```
+Total Videos: 120 | Avg: 6.0  
+Total Designs: 80 | Avg: 4.0  
 Avg Productivity: 4.2/5
-Charts:
+```
 
-Individual performance bars with a red dashed line for company averages.
+**Charts**:
 
-Weekly trend line charts for monthly analysis.
+* Individual performance bars with a red dashed line for company averages.
+* Weekly trend line charts for monthly analysis.
 
-Word Clouds:
+**Word Clouds**:
 
-Quick glance at recurring problems and suggestions.
+* Quick glance at recurring problems and suggestions.
 
-🚀 Benefits
-Provides actionable insights into productivity and challenges.
+## 🚀 Benefits
 
-Role-specific analysis for targeted improvement.
+* Provides actionable insights into productivity and challenges.
+* Role-specific analysis for targeted improvement.
+* Flexible with different CSV naming conventions.
+* Consolidates weekly reports into monthly overviews.
 
-Flexible with different CSV naming conventions.
+## 📌 Future Improvements
 
-Consolidates weekly reports into monthly overviews.
+* Add export to PDF report generation.
+* Enable multi-month trend comparison.
+* Integrate with Google Sheets API for real-time data fetching.
+* Add user authentication for secure internal access.
 
-📌 Future Improvements
-Add export to PDF report generation.
+---
 
-Enable multi-month trend comparison.
+## 🔗 Link
 
-Integrate with Google Sheets API for real-time data fetching.
+\[Add your link here]
 
-Add user authentication for secure internal access.
+---
+
+## Credits
+
+**Realized and designed by [Reda Heddad](#)**
+
+```
+
+
