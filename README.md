@@ -1,6 +1,4 @@
-Here's your README file in markdown format, with credits added at the end and a placeholder for the link:
 
-````
 # Weekly-Monthly Performance Dashboard
 
 ## 📊 Employee Performance Dashboard Overview
