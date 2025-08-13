@@ -145,7 +145,7 @@ https://weekly-monthly-performance-dashboard.streamlit.app/
 
 ## Credits
 
-**Realized and designed by [Reda Heddad](#https://www.linkedin.com/in/reda-heddad-7bb686258/)**
+**Realized and designed by [Reda Heddad](https://www.linkedin.com/in/reda-heddad-7bb686258/)**
 
 
 
