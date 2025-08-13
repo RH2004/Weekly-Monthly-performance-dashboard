@@ -140,14 +140,12 @@ Avg Productivity: 4.2/5
 
 ## 🔗 Link
 
-\[Add your link here]
-
+https://weekly-monthly-performance-dashboard.streamlit.app/
 ---
 
 ## Credits
 
-**Realized and designed by [Reda Heddad](#)**
+**Realized and designed by [Reda Heddad](#https://www.linkedin.com/in/reda-heddad-7bb686258/)**
 
-```
 
 
