@@ -72,24 +72,37 @@ st.markdown("""
         color: white;
     }
 
-    /* Dark mode fixes for Streamlit metric card text */
-    [data-theme="dark"] .stMetric > div {
-        color: white !important;
+    /* 🔧 Fix Streamlit metric text visibility in dark/light mode */
+    @media (prefers-color-scheme: dark) {
+      div[data-testid="stMetric"] {
+        background: linear-gradient(145deg, #1f2937, #374151) !important;
+        border: 1px solid #374151 !important;
+        border-radius: 12px !important;
+      }
+
+      div[data-testid="stMetric"] * {
+        color: #e5e7eb !important; /* readable gray */
+      }
+
+      div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        color: #ffffff !important; /* main value */
+        font-weight: 700 !important;
+      }
+
+      div[data-testid="stMetric"] [data-testid="stMetricLabel"],
+      div[data-testid="stMetric"] .stMetricLabel {
+        color: #cbd5e1 !important; /* label text */
+      }
     }
 
-    [data-theme="dark"] .stMetric .stMetricLabel {
-        color: #e2e8f0 !important; /* Light gray for labels */
+    @media (prefers-color-scheme: light) {
+      div[data-testid="stMetric"] {
+        background: linear-gradient(145deg, #f8fafc, #e2e8f0) !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        color: #111827 !important;
+      }
     }
-
-    [data-theme="dark"] .stMetric .stMetricValue {
-        color: #ffffff !important; /* White for main value */
-        font-weight: 700;
-    }
-
-    [data-theme="dark"] .stMetric .stMetricDelta {
-        color: #63b3ed !important; /* Accent blue for deltas */
-    }
-
     
     .role-header {
         background: linear-gradient(135deg, #667eea, #764ba2);
@@ -144,7 +157,6 @@ st.markdown("""
         margin-bottom: 2rem;
     }
     
-    /* Dark mode fallback for header */
     [data-theme="dark"] .dashboard-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         -webkit-background-clip: text;
@@ -152,7 +164,6 @@ st.markdown("""
         background-clip: text;
     }
     
-    /* Individual profile dark mode fixes */
     .individual-feedback {
         background: rgba(102, 126, 234, 0.1);
         border: 1px solid rgba(102, 126, 234, 0.3);
@@ -198,6 +209,7 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 class EnhancedPerformanceDashboard:
     def __init__(self):
