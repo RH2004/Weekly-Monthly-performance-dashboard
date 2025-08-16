@@ -71,6 +71,25 @@ st.markdown("""
         border: 1px solid #4a5568;
         color: white;
     }
+
+    /* Dark mode fixes for Streamlit metric card text */
+    [data-theme="dark"] .stMetric > div {
+        color: white !important;
+    }
+
+    [data-theme="dark"] .stMetric .stMetricLabel {
+        color: #e2e8f0 !important; /* Light gray for labels */
+    }
+
+    [data-theme="dark"] .stMetric .stMetricValue {
+        color: #ffffff !important; /* White for main value */
+        font-weight: 700;
+    }
+
+    [data-theme="dark"] .stMetric .stMetricDelta {
+        color: #63b3ed !important; /* Accent blue for deltas */
+    }
+
     
     .role-header {
         background: linear-gradient(135deg, #667eea, #764ba2);
