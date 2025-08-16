@@ -13,12 +13,31 @@ from io import BytesIO
 import base64
 
 # Page config
+# Page config
 st.set_page_config(
     page_title="Employee Performance Analytics",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Force light mode
+st.markdown("""
+<style>
+    /* Force Streamlit to light mode */
+    html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"], [data-theme] {
+        color-scheme: light !important;
+        --primary-background-color: white !important;
+        --secondary-background-color: white !important;
+        --text-color: black !important;
+    }
+    [data-theme] {
+        background-color: white !important;
+        color: black !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 
 # Enhanced custom CSS with dark mode compatibility
 st.markdown("""
