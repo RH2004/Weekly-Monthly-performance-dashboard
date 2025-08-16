@@ -23,20 +23,15 @@ st.set_page_config(
 
 # Force light mode
 st.markdown("""
-<style>
-    /* Force Streamlit to light mode */
-    html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"], [data-theme] {
-        color-scheme: light !important;
-        --primary-background-color: white !important;
-        --secondary-background-color: white !important;
-        --text-color: black !important;
-    }
-    [data-theme] {
-        background-color: white !important;
-        color: black !important;
-    }
-</style>
+<script>
+    // Force Streamlit to light mode after page load
+    document.addEventListener("DOMContentLoaded", function() {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.body.setAttribute('data-theme', 'light');
+    });
+</script>
 """, unsafe_allow_html=True)
+
 
 
 # Enhanced custom CSS with dark mode compatibility
